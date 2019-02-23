@@ -1,15 +1,12 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app=Flask(__name__)
 
 @app.route("/home")
 def home():
-    return "Yo Guys.This is my homepage"
+    return render_template("home.html")
 @app.route("/contactus")
 def contactus():
-    return "Phone Number :123456789"
-@app.route("/error")
-contactus()
-
+    return render_template("contact.html")
 if(__name__=="__main__"):
-    app.run()
+    app.run(debug=True)
